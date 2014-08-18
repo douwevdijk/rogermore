@@ -1537,6 +1537,10 @@ footer .footer-nav li a {
 @media (max-width: 992px) {
   /* Header
 	--------------------------------------------*/
+  header {
+    position: relative
+  }
+
   header .brand {
     display: none;
   }
@@ -1673,6 +1677,10 @@ footer .footer-nav li a {
 @media (max-width: 660px) {
   /* CheckOut Modal
 	--------------------------------------------*/
+  .affix {
+    position: relative
+  }
+
   #checkoutModal .vehicle-info {
     padding: 0 0 0 45px;
     float: none;
@@ -1688,6 +1696,11 @@ footer .footer-nav li a {
 }
 /* Small devices (480px and down) */
 @media (max-width: 480px) {
+
+  .affix {
+    position: relative
+  }
+
   #teaser form .submit {
     font-size: 18px;
   }
