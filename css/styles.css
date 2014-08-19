@@ -129,7 +129,7 @@ header .box {
   margin: 0 auto;
 }
 header .brand {
-  margin: 45px 0 0 0;
+  margin: 25px 0 0 0;
   font-family: Lobster;
 }
 header .brand h1 {
@@ -196,13 +196,11 @@ header .navbar-default .navbar-nav > .active > a {
 header .navbar-default .navbar-nav > li > a {
   background-color: transparent;
   padding: 8px 10px 7px 11px;
-  border: 2px solid #fff;
   -webkit-transition: background 0.4s ease-in-out;
   transition: background 0.4s ease-in-out;
 }
 header .navbar-default .navbar-nav > li > a:hover {
   background-color: #fff;
-  border: 2px solid #fff;
   background-color: #e7e7e7;
   color: #716d6e;
 }
