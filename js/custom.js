@@ -1,6 +1,17 @@
+slider_array = {};
 
-//custom douwe
 setTimeout(function () { $('#teaser').addClass("animated fadeInRight"); $('#teaserres').addClass("animated fadeInRight");}, 250);
+
+$(document).ready(function(){
+    $('.bxslider').each(function(i){
+      slider_array[i] = $(this).bxSlider({
+        infiniteLoop: false,
+        hideControlOnEnd: true,
+        adaptiveHeight: true,
+        onSliderLoad: function () {  $('.vehicle-img').removeClass('opac'); }
+      });
+    });
+});
 
 // Custom JS for the Theme
 
@@ -42,12 +53,28 @@ $(activeVehicleData).show();
 
 $(".vehicle-nav li").on("click", function(){
 
+  ind = $(this).index();
+
+  switch(ind) {
+
+    case 3:
+      ind = 2;
+      break;
+    case 4:
+      ind = 3;
+      break;
+    default:
+      ind = ind;
+  }
+
+
   $(".vehicle-nav .active").removeClass("active");
   $(this).addClass('active');
 
   $(activeVehicleData).fadeOut( "slow", function() {
     activeVehicleData = $(".vehicle-nav .active a").attr("href");
-    $(activeVehicleData).fadeIn("slow", function() {});
+    $(activeVehicleData).show();
+    slider_array[ind].reloadSlider();
   });
 
   return false;
@@ -69,9 +96,25 @@ $("#vehicle-nav-container a").each(function() {
 });
 
 $(".vehicle-data-select").change(function(){
+
+  var ind = this.selectedIndex;
+
+  switch(ind) {
+
+    case 3:
+      ind = 2;
+      break;
+    case 4:
+      ind = 3;
+      break;
+    default:
+      ind = ind;
+  }
+
   $(activeVehicleData).fadeOut( "slow", function() {
     activeVehicleData = $(".vehicle-data-select").val();
-    $(activeVehicleData).fadeIn("slow", function() {});
+    $(activeVehicleData).show();
+    slider_array[ind].reloadSlider();
   });
 
   return false;
@@ -181,7 +224,7 @@ var scrollTo = $(".scroll-to");
 scrollTo.click( function(event) {
   $('.modal').modal('hide');
   var position = $(document).scrollTop();
-  var scrollOffset = 260;
+  var scrollOffset = 114;
 
   if(position > 39)
   {
@@ -189,6 +232,10 @@ scrollTo.click( function(event) {
   }
 
   var marker = $(this).attr('href');
+
+  console.log(marker);
+  console.log($(marker).offset().top);
+
   $('html, body').animate({ scrollTop: $(marker).offset().top - scrollOffset}, 'slow');
   return false;
 });

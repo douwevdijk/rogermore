@@ -6,6 +6,17 @@ body {
   font-family: 'Lato', sans-serif;
   color: #716d6e;
 }
+
+.roger{
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+}
 /* Animation Delay
 --------------------------------------------*/
 .delay05s {
@@ -678,17 +689,27 @@ header.large .brand {
 #vehicles .vehicle-img {
   text-align: center;
 }
+
+.opac {
+  opacity: 0;
+}
 #vehicles .vehicle-img img {
   display: inline-block;
 }
 #vehicles .vehicle-price {
   background-color: #088c18;
+  text-align: center;
   height: 53px;
   line-height: 53px;
   padding: 0 10px;
   font-size: 24px;
   font-weight: 900;
   color: #fff;
+}
+
+.sold {
+  background-color: #C50202 !important;
+  text-align: center;
 }
 #vehicles .vehicle-price .info {
   font-weight: normal;
@@ -1535,6 +1556,11 @@ footer .footer-nav li a {
 @media (max-width: 992px) {
   /* Header
 	--------------------------------------------*/
+
+  .imholder{
+    position: relative !important;
+  }
+
   header {
     position: relative
   }
@@ -1691,6 +1717,11 @@ footer .footer-nav li a {
     padding: 0 0 0 45px;
     float: none;
   }
+
+  .imholder{
+    position: relative !important;
+  }
+
 }
 /* Small devices (480px and down) */
 @media (max-width: 480px) {
@@ -1701,5 +1732,13 @@ footer .footer-nav li a {
 
   #teaser form .submit {
     font-size: 18px;
+  }
+
+  .veh, .selectveh{
+    margin-top: -30px;
+  }
+
+  .imholder{
+    position: relative !important;
   }
 }
