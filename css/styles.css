@@ -16,12 +16,18 @@ body {
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
   border: 0px solid #000000;
+  -webkit-transform: translate3d(0,0,1px); 
+  -webkit-backface-visibility: hidden;
+  display: none;
 }
 
    .vehicle-data {
 	-webkit-transition: all 1s ease;
 	transition: all 1s ease;
+	display: none !important;
    }
+   
+   
    
 /* Animation Delay
 --------------------------------------------*/

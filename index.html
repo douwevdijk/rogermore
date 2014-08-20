@@ -49,7 +49,7 @@
 
 
     <!-- Header start -->
-    <header style="height: 95px;" class="navbar navbar-default navbar-fixed-top" class="small">
+    <header style="height: 95px; -webkit-backface-visibility: hidden;" class="navbar navbar-default navbar-fixed-top" class="small">
 
       <div class="row container box">
         <div class="col-md-5">
@@ -115,7 +115,7 @@
 
           <!-- Single photo start -->
           <div class="row" style="position: relative; visibility: visible; -webkit-animation: fadeInLeft;">
-            <div class="col-md-6 pull-left wow fadeInLeft animated" data-wow-offset="200">
+            <div class="col-md-6 pull-left">
               <h2 class="title">Over Roger More</h2>
               <h3 class="subtitle">Lorem ipsum dolor sit amet</h3>
               <p>Ongeveer 15 jaar geleden ben ik op slag verliefd geworden op de klassieke Porsche 911 toen ik de sportwagen een weekend mocht lenen van een goede vriend.
@@ -142,8 +142,8 @@
                 Roger Zetz
               </p>
             </div>
-            <div style="position: absolute; top: 0; right: 0;" class="imholder col-md-6 col-xs-12 pull-right wow fadeInUp animated" data-wow-offset="200">
-              <img src="img/cars/Roger.jpg" alt="Info Img" class="img-responsive roger">
+            <div style="position: absolute; top: 0; right: 0;" class="imholder col-md-6 col-xs-12 pull-right">
+              <img id="imageRoger" src="img/cars/Roger.jpg" alt="Info Img" class="img-responsive roger">
             </div>
           </div>
           <!-- Single photo end -->
@@ -154,11 +154,11 @@
           <section style="margin-top: 10px;" id="vehicles" class="container">
             <div class="row">
               <div style="height: 80px;" class="veh col-md-12">
-                <h2 class="title wow fadeInLeft animated" data-wow-offset="200">911</h2>
+                <h2 class="title" data-wow-offset="200">911</h2>
               </div>
 
               <!-- Vehicle nav start -->
-              <div class="col-md-3 wow fadeInLeft animated selectveh" data-wow-offset="200">
+              <div class="col-md-3 selectveh" data-wow-offset="200">
                 <div id="vehicle-nav-container">
                   <ul class="vehicle-nav">
                     <li class="active"><a href="#vehicle-1">Porsche 911 2.2 T Targa</a><span class="active">&nbsp;</span></li>
@@ -172,7 +172,7 @@
               <!-- Vehicle nav end -->
 
               <!-- Vehicle 1 data start -->
-              <div class="vehicle-data" id="vehicle-1">
+              <div class="vehicle-data" data-wow-offset="200" id="vehicle-1">
                 <div class="col-md-6" data-wow-offset="200">
                   <div class="vehicle-img opac">
                     <ul class="bxslider">
@@ -403,7 +403,6 @@
         <script src="js/bootstrap-datepicker.js"></script>
         <script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
         <script src="js/gmap3.min.js"></script>
-
         <script src="js/jquery.bxslider.js"></script>
 
         <!--[if !(gte IE 8)]><!-->

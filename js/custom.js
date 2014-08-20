@@ -38,8 +38,8 @@ $('input, textarea').placeholder();
 // Toggle Header / Nav
 //-------------------------------------------------------------
 
-$(document).on("scroll",function(){
-
+$(document).on("scroll",function(e){
+	e.preventDefault();
 });
 
 
@@ -224,7 +224,7 @@ $('#location-map-select').on('change', function() {
 var scrollTo = $(".scroll-to");
 
 scrollTo.click( function(event) {
-  $('.modal').modal('hide');
+  
   var position = $(document).scrollTop();
   var scrollOffset = 114;
 
@@ -235,10 +235,8 @@ scrollTo.click( function(event) {
 
   var marker = $(this).attr('href');
 
-  console.log(marker);
-  console.log($(marker).offset().top);
-
-  $('html, body').animate({ scrollTop: $(marker).offset().top - scrollOffset}, 'slow');
+  $('html, body').animate({ scrollTop: $(marker).offset().top - scrollOffset}, 'slow', 'linear');
+  //setTimeout(function () { $('.vehicle-data').fadeIn(); }, 500);
   return false;
 });
 
