@@ -53,6 +53,8 @@ $(activeVehicleData).show();
 
 $(".vehicle-nav li").on("click", function(){
 
+  $('.vehicle-data').addClass('opac');
+  
   ind = $(this).index();
 
   switch(ind) {
@@ -74,12 +76,12 @@ $(".vehicle-nav li").on("click", function(){
   $(activeVehicleData).fadeOut( "slow", function() {
     activeVehicleData = $(".vehicle-nav .active a").attr("href");
     $(activeVehicleData).show();
-    slider_array[ind].reloadSlider();
-  });
+    slider_array[ind].reloadSlider({onSliderLoad: function () { $('.vehicle-data').removeClass('opac'); } });
 
-  return false;
+    return false;
+   });
+
 });
-
 
 
 // Vehicles Responsive Nav

@@ -17,6 +17,12 @@ body {
   -webkit-border-radius: 10px 10px 10px 10px;
   border: 0px solid #000000;
 }
+
+   .vehicle-data {
+	-webkit-transition: all 1s ease;
+	transition: all 1s ease;
+   }
+   
 /* Animation Delay
 --------------------------------------------*/
 .delay05s {
@@ -1632,6 +1638,7 @@ footer .footer-nav li a {
   }
   /* Vehicles
 	--------------------------------------------*/
+
   #vehicles .styled-select-vehicle-data {
     display: block;
   }
@@ -1696,6 +1703,11 @@ footer .footer-nav li a {
   #checkoutModal .modal-footer {
     text-align: center;
   }
+  
+  #information p {
+	font-family: sans-serif;
+	text-align: left;
+  }
 }
 /* Small devices (660px and down) */
 @media (max-width: 660px) {
@@ -1717,6 +1729,11 @@ footer .footer-nav li a {
     padding: 0 0 0 45px;
     float: none;
   }
+  
+  #information p {
+	font-family: sans-serif;
+	text-align: left;
+  }
 
   .imholder{
     position: relative !important;
@@ -1728,6 +1745,11 @@ footer .footer-nav li a {
 
   .affix {
     position: relative
+  }
+  
+  #information p {
+	font-family: sans-serif;
+	text-align: left;
   }
 
   #teaser form .submit {
