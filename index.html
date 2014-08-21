@@ -46,7 +46,7 @@
   </head>
   <body id="top" data-spy="scroll" data-target=".navbar" data-offset="260">
 
-
+  <div id="some-element"></div>
 
     <!-- Header start -->
     <header style="height: 95px; -webkit-backface-visibility: hidden;" class="navbar navbar-default navbar-fixed-top" class="small">
@@ -115,9 +115,9 @@
 
           <!-- Single photo start -->
           <div class="row" style="position: relative; visibility: visible; -webkit-animation: fadeInLeft;">
-            <div class="col-md-6 pull-left">
+            <div class="col-md-6 pull-left wow" data-wow-offset="200">
               <h2 class="title">Over Roger More</h2>
-              <h3 class="subtitle">Lorem ipsum dolor sit amet</h3>
+              <h3 class="subtitle">Porsche 911 Classic Import</h3>
               <p>Ongeveer 15 jaar geleden ben ik op slag verliefd geworden op de klassieke Porsche 911 toen ik de sportwagen een weekend mocht lenen van een goede vriend.
                  Met een E-serie Porsche 911 2.4 E Targa uit 1972 met de befaamde Ölklappe (olievulklep op rechter schterscherm) reed ik  glunderend met het dak open van Amsterdam naar Maastricht. Wat een prachtige vrouwelijke lijnen heeft deze ultieme klassieker en wat een geweldig brullend geluid kwam er uit de zescilinder boxermotor.
                  Het was voor mij na een half uur rijden al meteen duidelijk, ik wil er ook zo een! Helaas paste op dat moment een Porsche 911 niet in mijn budget. Het werd dus hoog tijd om te gaan sparen om deze sportauto uit Stuttgart-Zuffenhausen te kunnen aanschaffen.
@@ -143,7 +143,7 @@
               </p>
             </div>
             <div style="position: absolute; top: 0; right: 0;" class="imholder col-md-6 col-xs-12 pull-right">
-              <img id="imageRoger" src="img/cars/Roger.jpg" alt="Info Img" class="img-responsive roger">
+              <img style="z-index:-1" id="imageRoger" data-original="img/cars/Roger.jpg" alt="Info Img" class="lazy img-responsive roger">
             </div>
           </div>
           <!-- Single photo end -->
@@ -174,27 +174,17 @@
               <!-- Vehicle 1 data start -->
               <div class="vehicle-data" data-wow-offset="200" id="vehicle-1">
                 <div class="col-md-6" data-wow-offset="200">
-                  <div class="vehicle-img opac">
+                  <div style="opacity:0" class="vehicle-img">
                     <ul class="bxslider">
                       <li><img class="img-responsive" src="img/cars/groen.jpg" alt="Vehicle"></li>
-                      <li><img src="img/cars/groen1.jpg" /></li>
-                      <li><img src="img/cars/groen2.jpg" /></li>
-                      <li><img src="img/cars/groen3.jpg" /></li>
+                      <li><img class="lazy" src="img/cars/groen1.jpg" /></li>
+                      <li><img class="lazy" src="img/cars/groen2.jpg" /></li>
+                      <li><img class="lazy" src="img/cars/groen3.jpg" /></li>
                     </ul>
                   </div>
                 </div>
-                <div class="col-md-3" data-wow-offset="200">
+                <div style="opacity:0" class="status col-md-3" data-wow-offset="200">
                   <div class="vehicle-price sold">Verkocht</div>
-                  <table class="table vehicle-features">
-                    <tr>
-                      <td>Kleur</td>
-                      <td>Groen</td>
-                    </tr>
-                    <tr>
-                      <td>Bouwjaar</td>
-                      <td>1970</td>
-                    </tr>
-                  </table>
                 </div>
               </div>
               <!-- Vehicle 1 data end -->
@@ -210,18 +200,8 @@
                     </ul>
                   </div>
                 </div>
-                <div class="col-md-3" data-wow-offset="200">
+                <div class="status col-md-3" data-wow-offset="200">
                   <div class="vehicle-price sold">Verkocht</div>
-                  <table class="table vehicle-features">
-                    <tr>
-                      <td>Kleur</td>
-                      <td>Zwart</td>
-                    </tr>
-                    <tr>
-                      <td>Bouwjaar</td>
-                      <td>1970</td>
-                    </tr>
-                  </table>
                 </div>
               </div>
               <!-- Vehicle 1 data end -->
@@ -230,17 +210,16 @@
               <div class="vehicle-data" id="vehicle-3">
                 <div class="col-md-6" data-wow-offset="200">
                   <div class="vehicle-img">
-                    <img class="img-responsive" src="img/cars/lichtblauw.jpg" alt="Vehicle">
+                    <ul class="bxslider">
+                      <li><img class="img-responsive" src="img/cars/lblauw1.jpg" alt="Vehicle"></li>
+                      <li><img src="img/cars/lblauw2.jpg" /></li>
+                      <li><img src="img/cars/lblauw3.jpg" /></li>
+                      <li><img src="img/cars/lblauw4.jpg" /></li>
+                    </ul>
                   </div>
                 </div>
-                <div class="col-md-3" data-wow-offset="200">
+                <div class="status col-md-3" data-wow-offset="200">
                   <div class="vehicle-price">In onderhandeling</div>
-                  <table class="table vehicle-features">
-                    <tr>
-                      <td>Kleur</td>
-                      <td>Lichtblauw</td>
-                    </tr>
-                  </table>
                 </div>
               </div>
               <!-- Vehicle 3 data end -->
@@ -257,14 +236,8 @@
                     </ul>
                   </div>
                 </div>
-                <div class="col-md-3" data-wow-offset="200">
+                <div class="status col-md-3" data-wow-offset="200">
                   <div class="vehicle-price">Te Koop</div>
-                  <table class="table vehicle-features">
-                    <tr>
-                      <td>Kleur</td>
-                      <td>Rood</td>
-                    </tr>
-                  </table>
                 </div>
               </div>
               <!-- Vehicle 4 data end -->
@@ -281,38 +254,8 @@
                     </ul>
                   </div>
                 </div>
-                <div class="col-md-3" data-wow-offset="200">
+                <div class="status col-md-3" data-wow-offset="200">
                   <div class="vehicle-price">Te Koop</div>
-                  <table class="table vehicle-features">
-                    <tr>
-                      <td>Model</td>
-                      <td>Limousine</td>
-                    </tr>
-                    <tr>
-                      <td>Doors</td>
-                      <td>4</td>
-                    </tr>
-                    <tr>
-                      <td>Seats</td>
-                      <td>5</td>
-                    </tr>
-                    <tr>
-                      <td>Luggage</td>
-                      <td>2 Suitcases / 2 Bags</td>
-                    </tr>
-                    <tr>
-                      <td>Transmission</td>
-                      <td>Automatic</td>
-                    </tr>
-                    <tr>
-                      <td>Air conditioning</td>
-                      <td>Yes</td>
-                    </tr>
-                    <tr>
-                      <td>Minimum age</td>
-                      <td>25 years</td>
-                    </tr>
-                  </table>
                 </div>
               </div>
               <!-- Vehicle 5 data end -->
@@ -329,10 +272,10 @@
             </div>
             <div class="col-md-4 col-xs-12 pull-right">
               <div class="contact-box">
-                <img src="img/contact-box-img1.jpg" alt="contact-img">
+                <img style="width: 100px;" src="img/cars/profile.jpg" alt="Roger Zetz">
                 <div class="contact-box-name">Roger Zetz</div>
-                <div class="contact-box-phon"><span class="highlight">Phone:</span> 666-999-888</div>
-                <div class="contact-box-email"><span class="highlight">Email:</span> connor@example.com</div>
+                <div class="contact-box-phon"><span class="highlight">Tel:</span> 06 39 76 17 62</div>
+                <div class="contact-box-email"><span class="highlight">Email:</span> info@rogermore.nl</div>
                 <div class="clearfix"></div>
               </div>
               <div class="contact-box-border">&nbsp;</div>
@@ -343,13 +286,13 @@
                   <div class="alert hidden" id="contact-form-msg"></div>
 
                   <div class="form-group">
-                    <input type="text" class="form-control first-name text-field" name="first-name" placeholder="First Name:">
-                    <input type="text" class="form-control last-name text-field" name="last-name" placeholder="Last Name:">
+                    <input type="text" class="form-control first-name text-field" name="first-name" placeholder="Voornaam:">
+                    <input type="text" class="form-control last-name text-field" name="last-name" placeholder="Achternaam:">
                     <div class="clearfix"></div>
                   </div>
 
                   <div class="form-group">
-                    <input type="tel" class="form-control telephone text-field" name="telephone" placeholder="Telephone:">
+                    <input type="tel" class="form-control telephone text-field" name="telephone" placeholder="Telefoon:">
                   </div>
 
                   <div class="form-group">
@@ -357,10 +300,10 @@
                   </div>
 
                   <div class="form-group">
-                    <textarea class="form-control message" name="message" placeholder="Message:"></textarea>
+                    <textarea class="form-control message" name="message" placeholder="Uw Bericht:"></textarea>
                   </div>
 
-                    <input type="submit" class="btn submit-message" name="submit-message" value="Submit Message">
+                    <input type="submit" class="btn submit-message" name="submit-message" value="Verstuur">
 
 
                 </form>
@@ -386,7 +329,6 @@
                     <li><a class="scroll-to" href="#contact">Contact</a></li>
                   </ul>
                   <div class="clearfix"></div>
-                  <p class="copyright">©2014 Into Output</p>
                 </div>
               </div>
             </div>
@@ -405,6 +347,8 @@
         <script src="js/gmap3.min.js"></script>
         <script src="js/jquery.bxslider.js"></script>
 
+        <script src="js/loaded.js"></script>
+
         <!--[if !(gte IE 8)]><!-->
             <script src="js/wow.min.js"></script>
             <script>
@@ -415,8 +359,6 @@
         <!--<![endif]-->
 
         <script src="js/custom.js"></script>
-
-
 
       </body>
       </html>

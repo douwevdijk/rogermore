@@ -8,41 +8,13 @@ $(document).ready(function(){
         infiniteLoop: false,
         hideControlOnEnd: true,
         adaptiveHeight: true,
-        onSliderLoad: function () {  $('.vehicle-img').removeClass('opac'); }
+        onSliderLoad: function () { $('.vehicle-img, .status').fadeTo( "slow" , 1); }
       });
     });
+
+     $("img.lazy").lazyload({effect : "fadeIn"});
+
 });
-
-// Custom JS for the Theme
-
-// Config
-//-------------------------------------------------------------
-
-var companyName = ""; // Enter your event title
-
-
-// Initialize Tooltip
-//-------------------------------------------------------------
-
-$('.my-tooltip').tooltip();
-
-
-
-// Initialize jQuery Placeholder
-//-------------------------------------------------------------
-
-$('input, textarea').placeholder();
-
-
-
-// Toggle Header / Nav
-//-------------------------------------------------------------
-
-$(document).on("scroll",function(e){
-	e.preventDefault();
-});
-
-
 
 // Vehicles Tabs / Slider
 //-------------------------------------------------------------
@@ -53,22 +25,9 @@ $(activeVehicleData).show();
 
 $(".vehicle-nav li").on("click", function(){
 
-  $('.vehicle-data').addClass('opac');
-  
+  $('.vehicle-img, .status').fadeTo( "slow" , 0);
+
   ind = $(this).index();
-
-  switch(ind) {
-
-    case 3:
-      ind = 2;
-      break;
-    case 4:
-      ind = 3;
-      break;
-    default:
-      ind = ind;
-  }
-
 
   $(".vehicle-nav .active").removeClass("active");
   $(this).addClass('active');
@@ -76,7 +35,7 @@ $(".vehicle-nav li").on("click", function(){
   $(activeVehicleData).fadeOut( "slow", function() {
     activeVehicleData = $(".vehicle-nav .active a").attr("href");
     $(activeVehicleData).show();
-    slider_array[ind].reloadSlider({onSliderLoad: function () { $('.vehicle-data').removeClass('opac'); } });
+    slider_array[ind].reloadSlider({onSliderLoad: function () { $('.vehicle-img, .status').fadeTo( "slow" , 1); } });
 
     return false;
    });
@@ -101,154 +60,58 @@ $(".vehicle-data-select").change(function(){
 
   var ind = this.selectedIndex;
 
-  switch(ind) {
-
-    case 3:
-      ind = 2;
-      break;
-    case 4:
-      ind = 3;
-      break;
-    default:
-      ind = ind;
-  }
-
   $(activeVehicleData).fadeOut( "slow", function() {
     activeVehicleData = $(".vehicle-data-select").val();
-    $(activeVehicleData).show();
+    $(activeVehicleData).fadeIn();
     slider_array[ind].reloadSlider();
   });
 
   return false;
 });
 
-
-
-// Initialize Datepicker
-//-------------------------------------------------------------------------------
-$('.datepicker').datepicker().on('changeDate', function(){
-  $(this).datepicker('hide');
-});
-
-
-
-// Toggle Drop-Off Location
-//-------------------------------------------------------------------------------
-$(".input-group.drop-off").hide();
-$(".different-drop-off").on("click", function(){
-	$(".input-group.drop-off").toggle();
-  $(".autocomplete-suggestions").css("width", $('.pick-up .autocomplete-location').outerWidth());
-  return false;
-});
-
-
-
 // Scroll to Top Button
 //-------------------------------------------------------------------------------
 
-$(window).scroll(function(){
-  if ($(this).scrollTop() > 100) {
-    $('.scrollup').removeClass("animated fadeOutRight");
-    $('.scrollup').fadeIn().addClass("animated fadeInRight");
-  } else {
-    $('.scrollup').removeClass("animated fadeInRight");
-    $('.scrollup').fadeOut().addClass("animated fadeOutRight");
-  }
-});
-
-$('.scrollup, .navbar-brand').click(function(){
-  $("html, body").animate({ scrollTop: 0 }, 'slow', function(){
-    $("nav li a").removeClass('active');
-  });
-  return false;
-});
-
-
-
-// Location Map Function
-//-------------------------------------------------------------------------------
-
-function loadMap(addressData){
-
-  var path = document.URL;
-
-  var locationContent = "<h2>"+companyName+"</h2>"
-  + "<p>"+addressData+"</p>";
-
-  $('#locations .map').gmap3({
-    map: {
-      options: {
-        maxZoom: 15,
-        scrollwheel: false,
-      }
-    },
-    infowindow:{
-     address: addressData,
-     options:{
-       content: locationContent
-     }
-   },
-   marker:{
-    address: addressData,
-    options: {
-      icon: new google.maps.MarkerImage(
-        path+"img/mapmarker.png",
-        new google.maps.Size(59, 58, "px", "px"),
-        new google.maps.Point(0, 0),    //sets the origin point of the icon
-        new google.maps.Point(29, 34)   //sets the anchor point for the icon
-        )
-    }
-  }
-},
-"autofit" );
-}
-
-loadMap(locations[0].value);
-
-$("#location-map-select").append('<option value="'+locations[0].value+'">Please select a location</option>');
-$.each(locations, function( index, value ) {
-  var option = '<option value="'+value.value+'">'+value.value+'</option>';
-  $("#location-map-select").append(option);
-});
-
-$('#location-map-select').on('change', function() {
-  $('#locations .map').gmap3('destroy');
-  loadMap(this.value);
-});
-
-
+// $(window).scroll(function(){
+//   if ($(this).scrollTop() > 100) {
+//     $('.scrollup').removeClass("animated fadeOutRight");
+//     $('.scrollup').fadeIn().addClass("animated fadeInRight");
+//   } else {
+//     $('.scrollup').removeClass("animated fadeInRight");
+//     $('.scrollup').fadeOut().addClass("animated fadeOutRight");
+//   }
+// });
+//
+// $('.scrollup, .navbar-brand').click(function(){
+//   $("html, body").animate({ scrollTop: 0 }, 'slow', function(){
+//     $("nav li a").removeClass('active');
+//   });
+//   return false;
+// });
 
 // Scroll To Animation
 //-------------------------------------------------------------------------------
-
-var scrollTo = $(".scroll-to");
-
-scrollTo.click( function(event) {
-  
-  var position = $(document).scrollTop();
-  var scrollOffset = 114;
-
-  if(position > 39)
-  {
-    scrollOffset = 114;
-  }
-
-  var marker = $(this).attr('href');
-
-  $('html, body').animate({ scrollTop: $(marker).offset().top - scrollOffset}, 'slow', 'linear');
-  //setTimeout(function () { $('.vehicle-data').fadeIn(); }, 500);
-  return false;
-});
-
-
-
-// setup autocomplete - pulling from locations-autocomplete.js
-//-------------------------------------------------------------------------------
-
-$('.autocomplete-location').autocomplete({
-  lookup: locations
-});
-
+// 
+// var scrollTo = $(".scroll-to");
+//
+// scrollTo.click( function(event) {
+//
+//   var position = $(document).scrollTop();
+//   var scrollOffset = 114;
+//
+//   if(position > 39)
+//   {
+//     scrollOffset = 114;
+//   }
+//
+//   var marker = $(this).attr('href');
+//
+//   $('html, body').animate({ scrollTop: $(marker).offset().top - scrollOffset}, 'slow', 'linear', function () {
+//
+//   });
+//
+//   return false;
+// });
 
 
 // Newsletter Form

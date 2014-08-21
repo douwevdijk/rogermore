@@ -16,19 +16,17 @@ body {
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
   border: 0px solid #000000;
-  -webkit-transform: translate3d(0,0,1px); 
-  -webkit-backface-visibility: hidden;
-  display: none;
+
 }
 
    .vehicle-data {
 	-webkit-transition: all 1s ease;
 	transition: all 1s ease;
-	display: none !important;
+  
    }
-   
-   
-   
+
+
+
 /* Animation Delay
 --------------------------------------------*/
 .delay05s {
@@ -616,6 +614,7 @@ header.large .brand {
 --------------------------------------------*/
 #vehicles {
   margin-top: 90px;
+  height: 550px;
 }
 #vehicles .title {
   font-size: 36px;
@@ -1709,7 +1708,7 @@ footer .footer-nav li a {
   #checkoutModal .modal-footer {
     text-align: center;
   }
-  
+
   #information p {
 	font-family: sans-serif;
 	text-align: left;
@@ -1735,7 +1734,9 @@ footer .footer-nav li a {
     padding: 0 0 0 45px;
     float: none;
   }
-  
+
+  #some-element { display: none; }
+
   #information p {
 	font-family: sans-serif;
 	text-align: left;
@@ -1752,7 +1753,9 @@ footer .footer-nav li a {
   .affix {
     position: relative
   }
-  
+
+  #some-element { display: none; }
+
   #information p {
 	font-family: sans-serif;
 	text-align: left;
@@ -1768,5 +1771,6 @@ footer .footer-nav li a {
 
   .imholder{
     position: relative !important;
+    z-index:-1;
   }
 }
