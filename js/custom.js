@@ -1,6 +1,12 @@
 slider_array = {};
 
-setTimeout(function () { $('#teaser').addClass("animated fadeInRight"); $('#teaserres').addClass("animated fadeInRight");}, 250);
+setTimeout(function () { $('#teaser').addClass("animated fadeInRight"); });
+
+imagesLoaded( document.querySelector('#teaserres'), function( instance ) {
+  $('#loaderholder').velocity("fadeOut", {duration: 500});
+  $('#teaserres').velocity( { properties: { opacity: 1 },
+    options: { duration: 500 } });
+});
 
 $(document).ready(function(){
     $('.bxslider').each(function(i){
