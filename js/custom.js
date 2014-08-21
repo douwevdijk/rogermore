@@ -7,7 +7,7 @@ $(document).ready(function(){
       slider_array[i] = $(this).bxSlider({
         infiniteLoop: false,
         hideControlOnEnd: true,
-        adaptiveHeight: true,
+		slideWidth: 545,
         onSliderLoad: function () { $('.vehicle-img, .status').fadeTo( "slow" , 1); }
       });
     });
@@ -123,6 +123,11 @@ scrollT.click( function(event) {
 	$("html").velocity("scroll", { offset: offs, complete: function () { $('.roger').velocity("fadeIn", {duration: 500}); } });	
 	return;
 	}
+	
+	$(activeVehicleData).hide();
+	$('.roger').hide();
+	$("html").velocity("scroll", { offset: offs, complete: function () { $('.roger').velocity("fadeIn", {duration: 500}); $(activeVehicleData).velocity("fadeIn", {duration: 500}); } });	
+	
 	
  }
   

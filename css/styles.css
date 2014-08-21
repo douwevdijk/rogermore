@@ -614,7 +614,6 @@ header.large .brand {
 --------------------------------------------*/
 #vehicles {
   margin-top: 90px;
-  height: 550px;
 }
 #vehicles .title {
   font-size: 36px;
@@ -1713,9 +1712,13 @@ footer .footer-nav li a {
 	font-family: sans-serif;
 	text-align: left;
   }
+  
+   #vehicles{
+	height: 700px !important;
+  }
 }
 /* Small devices (660px and down) */
-@media (max-width: 660px) {
+@media screen and (max-device-width: 640px) and (orientation: landscape){
   /* CheckOut Modal
 	--------------------------------------------*/
   .affix {
@@ -1741,6 +1744,10 @@ footer .footer-nav li a {
 	font-family: sans-serif;
 	text-align: left;
   }
+  
+  #vehicles{
+	height: 680px !important;
+  }
 
   .imholder{
     position: relative !important;
@@ -1748,10 +1755,14 @@ footer .footer-nav li a {
 
 }
 /* Small devices (480px and down) */
-@media (max-width: 480px) {
+@media screen and (max-device-width: 480px) and (orientation: portrait){
 
   .affix {
     position: relative
+  }
+  
+  #vehicles{
+	height: 450px !important;
   }
 
   #some-element { display: none; }
