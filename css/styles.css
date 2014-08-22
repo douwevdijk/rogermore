@@ -22,7 +22,7 @@ body {
    .vehicle-data {
 	-webkit-transition: all 1s ease;
 	transition: all 1s ease;
-  
+
    }
 
 
@@ -1712,7 +1712,7 @@ footer .footer-nav li a {
 	font-family: sans-serif;
 	text-align: left;
   }
-  
+
    #vehicles{
 	height: 700px !important;
   }
@@ -1744,7 +1744,7 @@ footer .footer-nav li a {
 	font-family: sans-serif;
 	text-align: left;
   }
-  
+
   #vehicles{
 	height: 680px !important;
   }
@@ -1760,7 +1760,7 @@ footer .footer-nav li a {
   .affix {
     position: relative
   }
-  
+
   #vehicles{
 	height: 450px !important;
   }

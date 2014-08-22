@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Roger More</title>
 
   <!-- Bootstrap -->
@@ -104,13 +105,15 @@
 
 
     <!-- Teaser start -->
-	  <div id="loaderholder"style="position: absolute; height: 60px;" class="visible-xs visible-sm col-xs-12"><div class="loader"></div></div>
-    <img style="opacity: 0; margin-top: 95px;" id="teaserres" class="visible-xs visible-sm img-responsive" src="img/cars/banner.jpg" />
+	  <div id="loaderholder"style="position: absolute; height: 289px;" class="visible-xs visible-sm col-xs-12"><div class="loader"></div></div>
+    <div style="height: 289;">
+      <img style="opacity: 0; margin-top: 95px;" id="teaserres" class="visible-xs visible-sm img-responsive" src="img/cars/banner.jpg" />
+    </div>
     <section class="hidden-xs hidden-sm" style="opacity: 0;" id="teaser"></section>
 
         <div class="hidden-xs hidden-sm arrow-down"></div>
 
-        <section style="margin-top: 30px;" id="information" class="container">
+        <section style="margin-top: 30px; opacity: 0" id="information" class="container">
 
           <!-- Single photo start -->
           <div class="row" style="position: relative; visibility: visible; -webkit-animation: fadeInLeft;">
@@ -302,7 +305,7 @@
                     <textarea class="form-control message" name="message" placeholder="Uw Bericht:"></textarea>
                   </div>
 
-                    <input type="submit" class="btn submit-message" name="submit-message" value="Verstuur">
+                    <input id="verstuur" type="submit" class="btn submit-message" name="submit-message" value="Verstuur">
 
 
                 </form>

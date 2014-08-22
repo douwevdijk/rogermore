@@ -3,9 +3,7 @@ slider_array = {};
 setTimeout(function () { $('#teaser').addClass("animated fadeInRight"); });
 
 imagesLoaded( document.querySelector('#teaserres'), function( instance ) {
-  $('#loaderholder').velocity("fadeOut", {duration: 500});
-  $('#teaserres').velocity( { properties: { opacity: 1 },
-    options: { duration: 500 } });
+$('#loaderholder').velocity("fadeOut", {duration: 500, complete: function () { $('#teaserres').velocity("fadeIn", {duration: 500}); $('#information').velocity("fadeIn", {duration: 500});} });
 });
 
 $(document).ready(function(){
@@ -28,7 +26,7 @@ $(activeVehicleData).show();
 
 $(".vehicle-nav li").on("click", function(){
 
-  $('.vehicle-img, .status').velocity({ 
+  $('.vehicle-img, .status').velocity({
     properties: { opacity: 0 },
     options: { duration: 500 }
 });
@@ -114,32 +112,35 @@ scrollT.click( function(event) {
 
   var marker = $(this).attr('href');
   offs = $(marker).offset().top - scrollOffset;
-  
-  if (marker === '#vehicles') { 
-  
+
+  if (marker === '#vehicles') {
+
      $(activeVehicleData).hide();
 	 $("html").velocity("scroll", { offset: offs, complete: function () { $(activeVehicleData).velocity("fadeIn", {duration: 500}); } });
 	 return;
-  
-  } else { 
-  
+
+  } else {
+
 	if (marker === '#information') {
-	
+
 	$('.roger').hide();
-	$("html").velocity("scroll", { offset: offs, complete: function () { $('.roger').velocity("fadeIn", {duration: 500}); } });	
+	$("html").velocity("scroll", { offset: offs, complete: function () { $('.roger').velocity("fadeIn", {duration: 500}); } });
 	return;
 	}
-	
+
 	$(activeVehicleData).hide();
 	$('.roger').hide();
-	$("html").velocity("scroll", { offset: offs, complete: function () { $('.roger').velocity("fadeIn", {duration: 500}); $(activeVehicleData).velocity("fadeIn", {duration: 500}); } });	
-	
-	
+	$("html").velocity("scroll", { offset: offs, complete: function () { $('.roger').velocity("fadeIn", {duration: 500}); $(activeVehicleData).velocity("fadeIn", {duration: 500}); } });
+
+
  }
-  
+
 
   $("html").velocity("scroll", { offset: offs} );
 
   return false;
 });
 
+$('#verstuur').on('click', function () {
+  return false;
+})
